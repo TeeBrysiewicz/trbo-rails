@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Accountings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accountings.each do |accounting| %>
+      <tr>
+        <td><%= accounting.name %></td>
+        <td><%= link_to 'Show', project_accountings_path(@accounting) %></td>
+        <td><%= link_to 'Edit', edit_project_accounting_path(@accounting.project, @accounting) %></td>
+        <td><%= link_to 'Destroy', [accounting.project, accounting], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accounting', new_project_accounting_path(@project) %> |
+<%= link_to 'Back', project_path(@project) %>

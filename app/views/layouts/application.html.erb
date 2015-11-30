@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TRBO</title>
+  
+  <!-- Tab Icon -->
+  <link rel="shortcut icon" type="<%= asset_path 'trbo-icon-small.png' %>" href="<%= asset_path 'trbo-icon-small.png' %>" />
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+  <!-- Circle counter cdn css file -->
+  <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/css/jquery.circliful.css'>    
+
+  <!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+	<div id="user_nav">
+	  <% if user_signed_in? %>
+	    Logged in as <strong><%= current_user.email %></strong>
+	    <%= link_to 'Edit Profile', edit_user_registration_path %> |
+	    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	  <% else %>
+	    <%= link_to "Sign Up", new_user_registration_path %> |
+	    <%= link_to "Login", new_user_session_path %>
+	  <% end %>
+	  <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+	</div>
+
+	<%= yield %>
+
+
+
+</body>
+</html>

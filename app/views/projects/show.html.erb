@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+
+<%= link_to 'Edit Project', edit_project_path(@project) %> |
+<%= link_to 'Create Revision', new_project_revision_path(@project) %> |
+<%= link_to 'Create Legal', new_project_legal_path(@project) %> |
+<%= link_to 'Create Accounting', new_project_accounting_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+

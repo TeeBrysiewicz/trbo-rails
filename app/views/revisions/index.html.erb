@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Revisions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.revisions.each do |revision| %>
+      <tr>
+        <td><%= revision.name %></td>
+        <td><%= link_to 'Show', project_revisions_path(@revision) %></td>
+        <td><%= link_to 'Edit', edit_project_revision_path(@revision.project, @revision) %></td>
+        <td><%= link_to 'Destroy', [revision.project, revision], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Revision', new_project_revision_path(@project) %> |
+<%= link_to 'Back', project_path(@project) %>

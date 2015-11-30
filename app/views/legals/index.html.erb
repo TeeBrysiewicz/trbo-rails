@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Legals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @legals.each do |legal| %>
+      <tr>
+        <td><%= legal.name %></td>
+        <td><%= link_to 'Show', project_legals_path(@legal) %></td>
+        <td><%= link_to 'Edit', edit_project_legal_path(@legal.project, @legal) %></td>
+        <td><%= link_to 'Destroy', [legal.project, legal], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Legal', new_project_legal_path(@project) %> |
+<%= link_to 'Back', project_path(@project) %>
