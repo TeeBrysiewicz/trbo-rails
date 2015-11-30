@@ -80,6 +80,6 @@ class AccountingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accounting_params
-      params.require(:accounting).permit(:name, :project_id)
+      params.require(:accounting).permit(:name, :project_id, :document)
     end
 end

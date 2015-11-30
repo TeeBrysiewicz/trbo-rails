@@ -80,6 +80,6 @@ class LegalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def legal_params
-      params.require(:legal).permit(:name, :project_id)
+      params.require(:legal).permit(:name, :project_id, :document)
     end
 end

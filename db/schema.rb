@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130011428) do
+ActiveRecord::Schema.define(version: 20151130193056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(version: 20151130011428) do
   create_table "accountings", force: :cascade do |t|
     t.string   "name"
     t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   add_index "accountings", ["project_id"], name: "index_accountings_on_project_id", using: :btree
@@ -28,8 +32,12 @@ ActiveRecord::Schema.define(version: 20151130011428) do
   create_table "legals", force: :cascade do |t|
     t.string   "name"
     t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   add_index "legals", ["project_id"], name: "index_legals_on_project_id", using: :btree
@@ -46,8 +54,12 @@ ActiveRecord::Schema.define(version: 20151130011428) do
   create_table "revisions", force: :cascade do |t|
     t.string   "name"
     t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   add_index "revisions", ["project_id"], name: "index_revisions_on_project_id", using: :btree

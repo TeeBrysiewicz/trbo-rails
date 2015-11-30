@@ -6,6 +6,6 @@
 </p>
 
 
-
+<%= link_to @legal.name, @legal.document.url %> |
 <%= link_to 'Edit', edit_project_legal_path(@legal.project, @legal) %> |
 <%= link_to 'Back', project_legals_path(@legal.project) %>

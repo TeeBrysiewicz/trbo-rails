@@ -5,10 +5,38 @@
   <%= @project.title %>
 </p>
 
+<hr>
+
+<% @project.revisions.each do |version| %>
+	<p>
+		<strong>Revision:</strong>
+		<%= version.name %> |
+		<%= link_to 'Show', project_revision_path(version.project, version) %>
+	</p>
+<% end %>
+
+<% @project.legals.each do |law| %>
+	<p>
+		<strong>Legal:</strong>
+		<%= law.name %> |
+		<%= link_to 'Show', project_legal_path(law.project, law) %>
+	</p>
+<% end %>
+
+<% @project.accountings.each do |account| %>
+	<p>
+		<strong>Accounting:</strong>
+		<%= account.name %> |
+		<%= link_to 'Show', project_accounting_path(account.project, account) %>
+	</p>
+<% end %>
+
+<hr>
 
 <%= link_to 'Edit Project', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+<br>
 <%= link_to 'Create Revision', new_project_revision_path(@project) %> |
 <%= link_to 'Create Legal', new_project_legal_path(@project) %> |
-<%= link_to 'Create Accounting', new_project_accounting_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Create Accounting', new_project_accounting_path(@project) %> 
 

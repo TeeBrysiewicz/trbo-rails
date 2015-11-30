@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # User Login Gem
 gem 'devise'
 
-# Adding Images To Models/DB
+# Adding Images and PDFs To Models/DB
 gem 'paperclip'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
