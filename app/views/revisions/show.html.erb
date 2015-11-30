@@ -6,6 +6,11 @@
 </p>
 
 
-<%= link_to @revision.name, @revision.document.url %> |
+View: <%= link_to @revision.name, @revision.document.url %> |
 <%= link_to 'Edit', edit_project_revision_path(@revision.project, @revision) %> |
 <%= link_to 'Back', project_revisions_path(@revision.project) %>
+
+
+<p>
+    <%= image_tag(@revision.document.url(:thumb), alt: "Upload Image", class: "pdf") %>
+</p>

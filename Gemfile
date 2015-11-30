@@ -5,6 +5,8 @@ gem 'devise'
 
 # Adding Images and PDFs To Models/DB
 gem 'paperclip'
+# Rendering PDFs on Page
+gem 'paperclip-ghostscript'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

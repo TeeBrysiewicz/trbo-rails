@@ -105,6 +105,8 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    paperclip-ghostscript (0.1.0)
+      paperclip
     pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -210,6 +212,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
+  paperclip-ghostscript
   pg
   rails (= 4.2.4)
   rspec-rails (~> 3.0)

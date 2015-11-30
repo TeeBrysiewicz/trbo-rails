@@ -15,6 +15,7 @@
  *= require font-awesome
  *= require responsive
  *= require style
+ *= require pdf
  *= require_tree .
  *= require_self
  */
